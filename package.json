@@ -1,0 +1,36 @@
+{
+  "name": "starter-nuxt",
+  "type": "module",
+  "scripts": {
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "nuxt dev --envName development",
+    "test": "nuxt dev --envName test",
+    "build:test": "nuxt build --envName test",
+    "preview:test": "nuxt preview --envName test",
+    "generate:test": "nuxt generate --envName test",
+    "build": "nuxt build --envName production",
+    "preview": "nuxt preview --envName production",
+    "generate": "nuxt generate --envName production"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "1.3.0",
+    "@nuxt/image": "1.10.0",
+    "@nuxt/ui": "3.1.0",
+    "@pinia/nuxt": "^0.11.0",
+    "@unocss/reset": "66.1.0-beta.12",
+    "eslint": "^9.25.1",
+    "install": "^0.13.0",
+    "nuxt": "^3.16.2",
+    "pinia": "^3.0.2",
+    "typescript": "^5.8.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@unocss/nuxt": "66.1.0-beta.12",
+    "sass": "^1.87.0",
+    "unocss": "66.1.0-beta.12"
+  }
+}

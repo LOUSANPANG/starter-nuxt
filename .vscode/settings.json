@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  // 保存文件时自动格式化
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // Required in vscode-eslint < v3.0.10 only
+  "eslint.useFlatConfig": true
+}
