@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   // 模块
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui',
     '@nuxt/image',
-    '@unocss/nuxt',
     '@pinia/nuxt',
   ],
 
@@ -44,6 +45,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',
+
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 
   // stylistic: { indent: 'tab', semi: true }
   eslint: {

@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <div>
     <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage :transition="{
@@ -7,7 +7,7 @@
         mode: 'out-in',
       }" />
     </NuxtLayout>
-  </UApp>
+  </div>
 </template>
 
 <script setup lang="ts">
