@@ -1,61 +1,52 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  // 模块
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@pinia/nuxt',
-  ],
-
-  // 环境配置
-  $development: {
-    runtimeConfig: {
-      public: {
-        apiBase: 'https://jsonplaceholder.typicode.com',
-      },
-    },
-  },
-  $production: {
-    runtimeConfig: {
-      public: {
-        apiBase: '',
-      },
-    },
-  },
-  $test: {
-    runtimeConfig: {
-      public: {
-        apiBase: '',
-      },
-    },
-  },
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  // 网站配置
-  app: {
-    head: {
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
-    },
-  },
-
-  css: ['~/assets/css/main.css'],
-  compatibilityDate: '2024-11-01',
+  css: ['./app/assets/css/main.css'],
 
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
 
-  // stylistic: { indent: 'tab', semi: true }
-  eslint: {
-    config: {
-      stylistic: true,
+  // 配置环境覆盖
+  $development: {},
+  $test: {},
+  $production: {},
+  $env: {
+    beta: {},
+  },
+
+  // useRuntimeConfig()
+  runtimeConfig: {
+    public: {
+      apiBase: '/api',
     },
   },
+
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
+  },
+
+  nitro: {
+    // 预渲染
+    // 不适合依赖 token、用户、动态数据库的页面
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: ['/'],
+    }
+  },
+
+  modules: ['@pinia/nuxt', '@nuxt/image', '@nuxt/icon'],
+
+  image: {
+    // quality: 80,
+    format: ['webp', 'jpeg', 'jpg', 'png'],
+    domains: ['hengtongsifang.com'],
+  }
 })
